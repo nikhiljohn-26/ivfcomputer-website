@@ -1,0 +1,17 @@
+# Local tooling config — machine-specific, not part of the site
+.claude/
+
+# Firebase CLI noise
+firebase-debug.log
+*-debug.log
+.firebase/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Dependencies, if any get added later
+node_modules/
