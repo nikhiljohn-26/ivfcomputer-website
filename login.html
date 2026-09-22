@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IVFComputer — Software for fertility clinics</title>
+  <title>Sign in — IVFComputer</title>
   <meta name="description" content="IVFComputer brings a fertility clinic's WhatsApp, lab reports, EMR, cycles, billing and patient app into one calm place — and shows each doctor what needs them today.">
-  <link rel="canonical" href="https://ivfcomputer.com/">
+  <link rel="canonical" href="https://ivfcomputer.com/login">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d9488'/%3E%3Ctext x='50%25' y='54%25' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'%3EIC%3C/text%3E%3C/svg%3E">
   <link rel="apple-touch-icon" href="/assets/logo-mark.png">
   <meta property="og:type" content="website">
@@ -224,239 +224,27 @@
   </style>
 </head>
 <body>
-
-<header id="top">
-  <div class="wrap nav">
-    <a href="/" class="logo"><span class="logo-mark">IC</span>IVFComputer</a>
-    <nav class="nav-links">
-      <a href="#features">What it does</a>
-      <a href="#patients">For patients</a>
-      <a href="#janini">Janini IVF</a>
-      <a href="/about">About us</a>
-    </nav>
-    <div class="nav-right">
-      <a class="signin" href="/login">Sign in</a>
-      <a class="btn btn-primary" href="https://wa.me/919900638277?text=I'd%20like%20to%20see%20IVFComputer">Book a demo</a>
-    </div>
+<main style="min-height:100vh;display:grid;place-items:center;padding:24px">
+  <div class="card" style="max-width:460px;width:100%;padding:36px 28px;text-align:center">
+    <a href="/" class="logo" style="justify-content:center;margin-bottom:20px"><span class="logo-mark">IC</span>IVFComputer</a>
+    <h1 style="font-size:1.75rem;margin-bottom:8px">Sign in to your clinic</h1>
+    <p style="color:var(--muted);margin-bottom:24px">Each clinic has its own IVFComputer address. Type your clinic's name as it appears in your address.</p>
+    <form id="f" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;border:1px solid var(--line);border-radius:14px;background:white;overflow:hidden">
+        <input id="c" required autocomplete="off" placeholder="yourclinic" style="flex:1;border:0;padding:14px 16px;font:inherit;outline:none;min-width:0">
+        <span style="padding:0 14px;color:var(--muted);font-size:.9375rem">.ivfcomputer.com</span>
+      </div>
+      <button class="btn btn-primary" style="border:0;cursor:pointer;font:inherit;font-weight:600">Continue →</button>
+    </form>
+    <p style="color:var(--muted);font-size:.875rem;margin-top:20px">Not sure of your address? <a href="https://wa.me/919900638277" style="color:var(--teal);font-weight:600">Message us on WhatsApp</a></p>
   </div>
-</header>
-
-<main>
-  <!-- Hero -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow"><span class="dot"></span>Live at fertility clinics in India</span>
-        <h1>Your fertility clinic, <em>calm</em> and in one place.</h1>
-        <p class="lede">WhatsApp messages, lab reports, the EMR, every cycle, billing and a patient app, all in one system. Each morning, your doctors see what needs them today.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://wa.me/919900638277?text=I'd%20like%20a%20demo%20of%20IVFComputer">Book a 30-minute demo →</a>
-          <a class="btn btn-ghost" href="#features">See what it does</a>
-        </div>
-        <div class="hero-proof">
-          <img src="assets/dr-rutvij-dalal.jpg" alt="">
-          <img src="assets/dr-akanksha-mishra.jpg" alt="">
-          <span>Running every day at <b>Janini IVF</b>, New Delhi</span>
-        </div>
-      </div>
-
-      <div class="shot" aria-label="The IVFComputer doctor's dashboard, and the patient app on a phone">
-        <div class="browser">
-          <div class="browser-bar"><i></i><i></i><i></i><span>yourclinic.ivfcomputer.com</span></div>
-          <img src="assets/app-dashboard.jpg" alt="The doctor's dashboard: patients waiting for a reply, reports to review, and active cycles" width="1800" height="1125">
-        </div>
-        <div class="phone"><img src="assets/app-patient.jpg" alt="The patient app, showing her two-week wait and today's medicines" loading="lazy"></div>
-        <div class="float float-a"><div class="ico" style="background:var(--mint);color:var(--mint-ink)">✓</div><div><b>Report filed</b><small>AMH · to the right patient</small></div></div>
-        <div class="float float-b"><div class="ico" style="background:var(--amber);color:var(--amber-ink)">!</div><div><b>6th IUI coming up</b><small>Worth a talk about IVF?</small></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Strip -->
-  <div class="strip">
-    <div class="wrap strip-grid">
-      <div class="strip-item"><span class="ic" style="background:var(--mint)">💬</span>WhatsApp, answered on time</div>
-      <div class="strip-item"><span class="ic" style="background:var(--amber)">📄</span>Reports filed for you</div>
-      <div class="strip-item"><span class="ic" style="background:var(--sky)">📱</span>Works on any phone</div>
-      <div class="strip-item"><span class="ic" style="background:var(--lilac)">🔒</span>Each clinic's data kept apart</div>
-    </div>
-  </div>
-
-  <!-- Problem -->
-  <section class="problem">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Why clinics use it</span>
-        <h2>A fertility clinic runs on WhatsApp and memory.</h2>
-        <p>Nobody is careless. There's simply too much for any team to hold in their heads.</p>
-      </div>
-      <div class="problem-grid">
-        <div class="card reveal"><span class="tag" style="background:var(--rose);color:var(--rose-ink)">The inbox</span><div class="q">"Did anyone reply to her?"</div><p>Enquiries, worried questions and reports all land in one WhatsApp. Messages get buried, and patients wait.</p></div>
-        <div class="card reveal"><span class="tag" style="background:var(--amber);color:var(--amber-ink)">The reports</span><div class="q">"Whose report is this?"</div><p>Labs send PDFs from their own numbers, named any way. Someone has to open each one and work out who it belongs to.</p></div>
-        <div class="card reveal"><span class="tag" style="background:var(--sky);color:var(--sky-ink)">The history</span><div class="q">"What did we try last time?"</div><p>Across hundreds of couples, no doctor can remember every earlier cycle, every result, every pattern.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section class="features" id="features">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">What it does</span>
-        <h2>Everything your clinic does, in one place.</h2>
-        <p>One system for your doctors, coordinators, embryologists and front desk, each seeing only what they need.</p>
-      </div>
-      <div class="feat-grid">
-        <div class="feat reveal" style="background:var(--mint);color:var(--mint-ink)"><div class="ic">💬</div><h3>Messages</h3><p>Every WhatsApp in one shared inbox, longest wait first. AI drafts the reply, and your team checks it before it goes.</p></div>
-        <div class="feat reveal" style="background:var(--amber);color:var(--amber-ink)"><div class="ic">📄</div><h3>Reports</h3><p>Lab reports are read and filed to the right patient. When it isn't sure whose report it is, it asks instead of guessing.</p></div>
-        <div class="feat reveal" style="background:var(--sky);color:var(--sky-ink)"><div class="ic">📋</div><h3>EMR</h3><p>The whole couple's record: history, investigations, scans, cycles and notes, ready before the consult starts.</p></div>
-        <div class="feat reveal" style="background:var(--lilac);color:var(--lilac-ink)"><div class="ic">🔬</div><h3>Cycles and lab</h3><p>IVF, IUI and frozen transfers tracked day by day, with embryo grading, the cryo register and witness records.</p></div>
-        <div class="feat reveal" style="background:var(--rose);color:var(--rose-ink)"><div class="ic">✍️</div><h3>Consents and registers</h3><p>ART Act consents, registers and the monthly PC&amp;PNDT returns, filled in from the records you already keep.</p></div>
-        <div class="feat reveal" style="background:#f1f5f9;color:#334155"><div class="ic">💳</div><h3>Billing</h3><p>UPI QR codes for the exact amount, plus cash and card, with a numbered receipt for every payment.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Patterns -->
-  <section>
-    <div class="wrap split">
-      <div class="reveal">
-        <span class="eyebrow">The fertility graph</span>
-        <h2>It remembers the patterns doctors can't.</h2>
-        <p>IVFComputer links every visit, result and cycle into one journey per couple, then looks across all of them. When a patient walks in, the doctor sees what stands out, and which earlier patients looked most like her.</p>
-        <ul class="ticks">
-          <li>Repeated IUIs with no change of plan</li>
-          <li>A thin lining at transfer, across cycles</li>
-          <li>Past patients with a similar story, and what worked for them</li>
-        </ul>
-      </div>
-      <div class="visual reveal">
-        <div class="pattern-stack">
-          <div class="pat"><div class="badge" style="background:var(--rose);color:var(--rose-ink)">6</div><div><b>Six IUIs, all negative</b><span>Age 34 · PCOS · AMH 1.1</span><div class="journey"><i>IUI 1</i><i>IUI 2</i><i>IUI 3</i><i>IUI 4</i><i>IUI 5</i><i>IUI 6</i></div></div></div>
-          <div class="pat"><div class="badge" style="background:var(--mint);color:var(--mint-ink)">3</div><div><b>3 past patients looked like her</b><span>Two moved to IVF after their third IUI</span><div class="journey"><i>IUI ×3</i><i class="ok">IVF</i><i class="ok">Positive</i></div></div></div>
-          <div class="pat"><div class="badge" style="background:var(--amber);color:var(--amber-ink)">!</div><div><b>Lining under 8 mm</b><span>At the last two transfers</span></div></div>
-        </div>
-        <p class="fine">Illustration with made-up patients. The patterns shown to a doctor always come from their own clinic's records.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Patients -->
-  <section class="patient" id="patients">
-    <div class="wrap split">
-      <div class="visual reveal"><div class="phone-lg"><img src="assets/app-patient.jpg" alt="The patient app: her stage, days to her pregnancy test, and today's medicines" loading="lazy"></div></div>
-      <div class="reveal">
-        <span class="eyebrow">For patients</span>
-        <h2>Her own app, for the most anxious weeks of her life.</h2>
-        <p>Every patient gets Ovum Club: her treatment, her medicines and her reports, explained simply. It opens from a WhatsApp link, with nothing to download.</p>
-        <ul class="ticks">
-          <li>Where she is in her cycle, and what happens next</li>
-          <li>Today's medicines, with a tick when she's taken them</li>
-          <li>Her reports and embryo updates in one place</li>
-          <li>Messages to her care team</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Janini -->
-  <section id="janini">
-    <div class="wrap">
-      <div class="janini reveal">
-        <div class="janini-l">
-          <img class="janini-logo" src="assets/janini-logo.jpg" alt="Janini IVF">
-          <h2>Live at Janini IVF, New Delhi.</h2>
-          <p>Janini runs on its own IVFComputer site, with its own name, its own staff logins and its own patients' data, kept separate from every other clinic.</p>
-          <ul class="ticks">
-            <li>Patient WhatsApp messages in one inbox, with staff alerted when someone replies</li>
-            <li>Lab reports filed to the right patient</li>
-            <li>A morning brief for the doctors, on screen and on WhatsApp</li>
-            <li>ART registers and monthly returns from everyday records</li>
-          </ul>
-        </div>
-        <div class="janini-r">
-          <div class="doc"><img src="assets/dr-rutvij-dalal.jpg" alt="Dr Rutvij Dalal"><div><b>Dr Rutvij Dalal</b><span>Medical Director · IVF specialist</span></div></div>
-          <div class="doc"><img src="assets/dr-akanksha-mishra.jpg" alt="Dr Akanksha Mishra"><div><b>Dr Akanksha Mishra</b><span>Fertility specialist · Embryologist</span></div></div>
-          <a class="btn btn-ghost" style="justify-self:start" href="https://wa.me/919900638277?text=I'd%20like%20to%20hear%20about%20the%20Janini%20setup">Ask us about Janini →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- India -->
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Made for Indian clinics</span>
-        <h2>Built around how your clinic already works.</h2>
-      </div>
-      <div class="india-grid">
-        <div class="card reveal"><div class="emoji">💬</div><h3>WhatsApp first</h3><p>Patients keep messaging the number they already use. Nothing new for them to learn.</p></div>
-        <div class="card reveal"><div class="emoji">📱</div><h3>On any phone</h3><p>Doctors check in between procedures, and patients open it from WhatsApp.</p></div>
-        <div class="card reveal"><div class="emoji">🗣️</div><h3>Your languages</h3><p>English, Hindi, Marathi, Punjabi, Kannada, Telugu and Tamil.</p></div>
-        <div class="card reveal"><div class="emoji">🏥</div><h3>Your own site</h3><p>Your clinic's name and address, and your data kept apart from every other clinic's.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta">
-    <div class="wrap">
-      <div class="cta-box reveal">
-        <h2>See it with your own clinic in mind.</h2>
-        <p>A 30-minute video call. We show the real app, with made-up patients.</p>
-        <div class="hero-ctas" style="justify-content:center">
-          <a class="btn btn-white" href="https://wa.me/919900638277?text=I'd%20like%20a%20demo%20of%20IVFComputer">Book on WhatsApp →</a>
-          <a class="btn btn-line" href="mailto:nikhil@ivfcomputer.com">Email us</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
-
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <div>
-        <a href="/" class="logo" style="margin-bottom:12px"><span class="logo-mark">IC</span>IVFComputer</a>
-        <p style="max-width:320px">Software for fertility clinics in India, from the first enquiry to the pregnancy test and beyond.</p>
-      </div>
-      <div>
-        <h4>Product</h4>
-        <a href="#features">What it does</a>
-        <a href="#patients">For patients</a>
-        </div>
-      <div>
-        <h4>Talk to us</h4>
-        <a href="https://wa.me/919900638277">WhatsApp +91 99006 38277</a>
-        <a href="mailto:nikhil@ivfcomputer.com">nikhil@ivfcomputer.com</a>
-        <a href="/about">Meet the founders</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 IVF Computer</span>
-      <span>Pictures show the real app with made-up patients.</span>
-    </div>
-  </div>
-</footer>
-
-<a class="wa-fab" href="https://wa.me/919900638277?text=Hi%2C%20I'd%20like%20to%20know%20more%20about%20IVFComputer" aria-label="Message us on WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3M12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8M20.5 3.5A11.8 11.8 0 0 0 1.9 17.7L.2 24l6.4-1.7A11.8 11.8 0 0 0 24 12a11.7 11.7 0 0 0-3.5-8.5"/></svg>
-</a>
-
 <script>
-  // A soft line under the header once the page scrolls, and sections that
-  // ease in as they arrive. Both are decoration; the page reads fine without.
-  const header = document.querySelector('header');
-  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 8), { passive: true });
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    }), { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
-  }
+  document.getElementById('f').onsubmit = (e) => {
+    e.preventDefault();
+    const name = document.getElementById('c').value.trim().toLowerCase().replace(/[^a-z0-9-]/g, '');
+    if (name) location.href = 'https://' + name + '.ivfcomputer.com';
+  };
 </script>
 </body>
 </html>
