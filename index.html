@@ -1,795 +1,493 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IVFComputer — AI Operating System for Fertility Clinics</title>
-  <meta name="description" content="From the first WhatsApp to the baby's first birthday. IVFComputer is the AI operating system for IVF clinics — 8 modules, zero setup fees, everything through WhatsApp.">
-  <meta name="keywords" content="IVF software, fertility clinic software India, IVF CRM, IVF management system, WhatsApp AI clinic, IVFComputer, AI for IVF, fertility clinic operations">
-  <meta name="author" content="IVFComputer">
-  <meta name="robots" content="index, follow">
+  <title>IVFComputer — Software for fertility clinics</title>
+  <meta name="description" content="IVFComputer brings a fertility clinic's WhatsApp, lab reports, EMR, cycles, billing and patient app into one calm place — and shows each doctor what needs them today.">
   <link rel="canonical" href="https://ivfcomputer.com/">
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F7E6B'/%3E%3Ctext x='50%25' y='54%25' font-family='Georgia,serif' font-size='34' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'%3EIC%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d9488'/%3E%3Ctext x='50%25' y='54%25' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'%3EIC%3C/text%3E%3C/svg%3E">
   <link rel="apple-touch-icon" href="/assets/logo-mark.png">
-  <meta name="theme-color" content="#0F7E6B">
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ivfcomputer.com/">
   <meta property="og:site_name" content="IVFComputer">
   <meta property="og:locale" content="en_IN">
-  <meta property="og:title" content="IVFComputer — AI Operating System for Fertility Clinics">
-  <meta property="og:description" content="From the first WhatsApp to the baby's first birthday. AI runs every operational surface of your IVF clinic — LeadOS, EngageOS, CaseOS, ClinicOS, PatientOS, GrowthOS, DelightOS, PharmacyOS.">
-  <meta property="og:image" content="https://ivfcomputer.com/assets/logo-mark.png">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="IVFComputer — AI Operating System for Fertility Clinics">
-  <meta name="twitter:description" content="Humans don't follow checklists. AI does. IVFComputer runs every touchpoint of your IVF clinic through WhatsApp.">
-  <meta name="twitter:image" content="https://ivfcomputer.com/assets/logo-mark.png">
-  <!-- Structured data -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"IVFComputer","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://ivfcomputer.com","description":"AI operating system for IVF and fertility clinics. 13 modules covering the full patient journey from first enquiry to baby's first birthday — IVF, IUI, and male infertility.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR","description":"Outcome-based pricing — 2% of clinic revenue, zero setup fees"},"author":{"@type":"Organization","name":"IVFComputer","url":"https://ivfcomputer.com"}}</script>
+  <meta property="og:title" content="IVFComputer — Software for fertility clinics">
+  <meta property="og:description" content="WhatsApp, lab reports, EMR, cycles, billing and a patient app — in one calm place for your clinic.">
+  <meta property="og:image" content="https://ivfcomputer.com/assets/app-dashboard.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    /* The same soft, warm look as the app: mint page, deep-teal ink,
+       rounded white cards and pastel tiles. */
     :root {
-      --teal: #0F7E6B; --teal-dark: #0A6257; --teal-light: #E1F5EE; --teal-mid: #C5EBE0;
-      --warm: #D85A30; --warm-light: #FAECE7;
-      --dark: #111827; --mid: #374151; --muted: #6B7280; --faint: #9CA3AF;
-      --bg: #F9FAFB; --white: #FFFFFF; --border: #E5E7EB;
+      --page: #f0fdfa;
+      --page-2: #e6faf5;
+      --ink: #134e4a;
+      --ink-soft: #0f766e;
+      --muted: #5b6b69;
+      --teal: #0d9488;
+      --teal-dark: #0f766e;
+      --line: #d9f2ec;
+      --white: #ffffff;
+      --mint: #ccfbf1;  --mint-ink: #115e59;
+      --rose: #fee2e2;  --rose-ink: #991b1b;
+      --amber: #fef3c7; --amber-ink: #92400e;
+      --sky: #e0f2fe;   --sky-ink: #075985;
+      --lilac: #ede9fe; --lilac-ink: #5b21b6;
+      --head: 'Outfit', system-ui, sans-serif;
+      --body: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --shadow: 0 2px 10px rgba(15,118,110,.06);
+      --shadow-lg: 0 30px 60px -24px rgba(19,78,74,.35);
     }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--dark); background: var(--white); -webkit-font-smoothing: antialiased; }
-    a { color: var(--teal); text-decoration: none; }
-    a:hover { color: var(--teal-dark); }
+    body { font-family: var(--body); color: var(--ink); background: var(--page); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, h3 { font-family: var(--head); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .8125rem; font-weight: 600; color: var(--ink-soft); background: var(--white); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; }
+    .eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 0 4px rgba(16,185,129,.15); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; font-size: .9375rem; border-radius: 999px; padding: 14px 24px; transition: transform .15s ease, box-shadow .15s ease, background .15s; white-space: nowrap; }
+    .btn-primary { background: var(--teal); color: white; box-shadow: 0 10px 24px -10px rgba(13,148,136,.7); }
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    .btn-ghost { background: var(--white); color: var(--ink); border: 1px solid var(--line); }
+    .btn-ghost:hover { border-color: #99e6d6; transform: translateY(-1px); }
+    section { padding: 96px 0; }
+    .section-head { max-width: 680px; margin-bottom: 48px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 2.75rem); margin: 14px 0 12px; }
+    .section-head p { font-size: 1.0625rem; color: var(--muted); }
+    .center { text-align: center; margin-left: auto; margin-right: auto; }
 
-    /* NAV */
-    header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-    nav { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 62px; display: flex; align-items: center; gap: 2rem; }
-    .logo-link { display: flex; align-items: center; flex-shrink: 0; }
-    .logo-link img { height: 32px; width: auto; }
-    .nav-links { display: flex; gap: 1.75rem; list-style: none; margin-left: auto; }
-    .nav-links a { font-size: 13.5px; font-weight: 500; color: var(--mid); transition: color 0.15s; }
-    .nav-links a:hover { color: var(--teal); }
-    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px; border-radius: 8px; font-size: 13.5px; font-weight: 700; font-family: inherit; cursor: pointer; transition: all 0.15s; border: none; white-space: nowrap; letter-spacing: -0.01em; }
-    .btn-primary { background: var(--teal); color: white; }
-    .btn-primary:hover { background: var(--teal-dark); color: white; }
-    .btn-outline { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
-    .btn-outline:hover { background: var(--teal-light); }
-    .btn-lg { padding: 13px 28px; font-size: 15px; border-radius: 10px; }
+    /* Header */
+    header { position: sticky; top: 0; z-index: 50; background: rgba(240,253,250,.85); backdrop-filter: saturate(160%) blur(12px); -webkit-backdrop-filter: saturate(160%) blur(12px); border-bottom: 1px solid transparent; transition: border-color .2s; }
+    header.scrolled { border-bottom-color: var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: var(--head); font-weight: 600; font-size: 1.25rem; }
+    .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: var(--teal); color: white; display: grid; place-items: center; font-size: .9375rem; font-weight: 700; }
+    .nav-links { display: flex; gap: 32px; font-size: .9375rem; font-weight: 500; color: var(--muted); }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-right .signin { font-size: .9375rem; font-weight: 600; color: var(--ink-soft); padding: 8px 4px; }
+    .nav-right .btn { padding: 10px 20px; }
 
-    /* BANNER */
-    .banner { background: var(--teal); text-align: center; padding: 10px 2rem; font-size: 13.5px; font-weight: 500; color: white; }
-    .banner a { color: rgba(255,255,255,0.85); font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.4); }
-    .banner a:hover { color: white; }
+    /* Hero */
+    .hero { padding: 64px 0 88px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center; }
+    .hero h1 { font-size: clamp(2.5rem, 5.4vw, 4rem); margin: 20px 0; }
+    .hero h1 em { font-style: normal; color: var(--teal); }
+    .hero .lede { font-size: 1.1875rem; color: var(--muted); max-width: 520px; margin-bottom: 32px; }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-proof { margin-top: 32px; display: flex; align-items: center; gap: 12px; font-size: .875rem; color: var(--muted); }
+    .hero-proof img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid white; box-shadow: var(--shadow); }
+    .hero-proof img + img { margin-left: -14px; }
+    .hero-proof b { color: var(--ink); font-weight: 600; }
 
-    /* HERO */
-    .hero { max-width: 920px; margin: 0 auto; padding: 6rem 2rem 5rem; text-align: center; }
-    .hero-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--teal-light); color: var(--teal); font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; margin-bottom: 2rem; }
-    .hero h1 { font-size: clamp(36px, 5.5vw, 60px); font-weight: 800; line-height: 1.1; letter-spacing: -0.04em; color: var(--dark); margin-bottom: 1.25rem; }
-    .hero h1 .accent { color: var(--teal); }
-    .hero-sub { font-size: clamp(16px, 2vw, 19px); font-weight: 400; color: var(--muted); line-height: 1.65; max-width: 560px; margin: 0 auto 2.5rem; }
-    .hero-cta { display: flex; gap: 0.875rem; justify-content: center; flex-wrap: wrap; }
-
-    /* STATS */
-    .stats-bar { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg); }
-    .stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); }
-    .stat { padding: 2rem 1.5rem; text-align: center; border-right: 1px solid var(--border); }
-    .stat:last-child { border-right: none; }
-    .stat-n { font-size: 44px; font-weight: 800; color: var(--teal); line-height: 1; letter-spacing: -0.04em; margin-bottom: 6px; }
-    .stat-l { font-size: 12.5px; font-weight: 500; color: var(--muted); line-height: 1.45; }
-
-    /* SECTION HELPERS */
-    .s { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
-    .s-alt { background: var(--bg); }
-    .eyebrow { font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
-    .heading { font-size: clamp(26px, 3vw, 38px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; color: var(--dark); margin-bottom: 0.75rem; }
-    .subhead { font-size: 16px; font-weight: 400; color: var(--muted); line-height: 1.65; max-width: 560px; margin-bottom: 2.5rem; }
-
-    /* ═══ AI SECTION ═══ */
-    .ai-section { background: #0C1F1B; padding: 5rem 2rem; }
-    .ai-inner { max-width: 1200px; margin: 0 auto; }
-    .ai-section .eyebrow { color: rgba(255,255,255,0.6); }
-    .ai-section .heading { color: white; max-width: 700px; }
-    .ai-section .heading em { font-style: normal; color: var(--teal); }
-    .ai-section .subhead { color: rgba(255,255,255,0.8); }
-
-    .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
-
-    .ai-checklist {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 2rem;
+    /* The picture: the real app, with made-up patients */
+    .shot { position: relative; padding: 20px 0 48px 0; }
+    .shot::before { content: ''; position: absolute; inset: -40px -80px -20px 10%; background: radial-gradient(closest-side, rgba(94,234,212,.45), transparent); z-index: 0; }
+    .browser { position: relative; z-index: 1; background: white; border-radius: 18px; box-shadow: var(--shadow-lg); border: 1px solid var(--line); overflow: hidden; }
+    .browser-bar { display: flex; align-items: center; gap: 6px; padding: 12px 16px; background: #f7fdfb; border-bottom: 1px solid var(--line); }
+    .browser-bar i { width: 10px; height: 10px; border-radius: 50%; background: #d1e7e2; }
+    .browser-bar span { margin-left: 12px; font-size: .75rem; color: var(--muted); background: white; border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; }
+    .phone { position: absolute; z-index: 2; right: -12px; bottom: 0; width: 34%; max-width: 210px; border-radius: 30px; background: #0b1f1d; padding: 7px; box-shadow: var(--shadow-lg); }
+    .phone img { border-radius: 24px; aspect-ratio: 390 / 700; object-fit: cover; object-position: top; width: 100%; }
+    .float { position: absolute; z-index: 3; background: white; border-radius: 16px; box-shadow: 0 18px 40px -16px rgba(19,78,74,.4); padding: 12px 14px; display: flex; align-items: center; gap: 10px; font-size: .8125rem; }
+    .float b { display: block; font-weight: 700; color: var(--ink); }
+    .float small { color: var(--muted); font-size: .75rem; }
+    .float .ico { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; flex-shrink: 0; }
+    .float-a { left: -28px; top: 44%; }
+    .float-b { left: 12%; bottom: 4px; }
+    @media (prefers-reduced-motion: no-preference) {
+      .float-a { animation: drift 6s ease-in-out infinite; }
+      .float-b { animation: drift 5s ease-in-out -2s infinite; }
+      .phone { animation: drift 7s ease-in-out -1s infinite; }
+      .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+      .reveal.in { opacity: 1; transform: none; }
     }
+    @keyframes drift { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-    .ai-checklist-title {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
-      color: rgba(255,255,255,0.6); margin-bottom: 1.25rem;
+    /* Proof strip */
+    .strip { padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--white); }
+    .strip-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .strip-item { display: flex; align-items: center; gap: 12px; font-size: .9375rem; font-weight: 500; color: var(--ink); }
+    .strip-item .ic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex-shrink: 0; }
+
+    /* Problem */
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { background: white; border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
+    .problem .card .q { font-family: var(--head); font-size: 1.25rem; font-weight: 600; margin-bottom: 10px; }
+    .problem .card p { color: var(--muted); font-size: .9375rem; }
+    .problem .card .tag { display: inline-block; font-size: .75rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; }
+
+    /* Features */
+    .features { background: white; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .feat { border-radius: 24px; padding: 28px; transition: transform .2s ease, box-shadow .2s ease; }
+    .feat:hover { transform: translateY(-3px); box-shadow: 0 16px 30px -18px rgba(19,78,74,.35); }
+    .feat .ic { width: 46px; height: 46px; border-radius: 14px; background: rgba(255,255,255,.75); display: grid; place-items: center; margin-bottom: 18px; }
+    .feat h3 { font-size: 1.25rem; margin-bottom: 8px; }
+    .feat p { font-size: .9375rem; opacity: .85; }
+
+    /* Split sections */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .split h2 { font-size: clamp(2rem, 4vw, 2.625rem); margin: 14px 0 16px; }
+    .split > div > p { color: var(--muted); font-size: 1.0625rem; margin-bottom: 24px; }
+    .ticks { list-style: none; display: grid; gap: 14px; }
+    .ticks li { display: flex; gap: 12px; align-items: flex-start; font-size: .9875rem; }
+    .ticks li::before { content: '✓'; flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--mint); color: var(--mint-ink); font-weight: 800; font-size: .75rem; display: grid; place-items: center; margin-top: 1px; }
+
+    /* Pattern card (drawn, illustrative) */
+    .pattern-stack { position: relative; display: grid; gap: 16px; }
+    .pat { background: white; border: 1px solid var(--line); border-radius: 20px; padding: 18px 20px; box-shadow: var(--shadow); display: flex; gap: 14px; align-items: flex-start; }
+    .pat .badge { flex-shrink: 0; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; font-family: var(--head); font-weight: 700; }
+    .pat b { display: block; font-size: 1rem; }
+    .pat span { font-size: .875rem; color: var(--muted); }
+    .journey { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+    .journey i { font-style: normal; font-size: .6875rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: var(--rose); color: var(--rose-ink); }
+    .journey i.ok { background: var(--mint); color: var(--mint-ink); }
+    .fine { font-size: .8125rem; color: var(--muted); margin-top: 12px; }
+
+    /* Patient app */
+    .patient { background: linear-gradient(180deg, var(--page) 0%, var(--page-2) 100%); }
+    .phone-lg { width: 300px; max-width: 80%; margin: 0 auto; border-radius: 40px; background: #0b1f1d; padding: 10px; box-shadow: var(--shadow-lg); }
+    .phone-lg img { border-radius: 32px; aspect-ratio: 390 / 780; object-fit: cover; object-position: top; width: 100%; }
+
+    /* Janini */
+    .janini { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; border-radius: 28px; overflow: hidden; background: white; border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .janini-l { padding: 48px; }
+    .janini-l h2 { font-size: clamp(1.75rem, 3.4vw, 2.375rem); margin: 14px 0 16px; }
+    .janini-l > p { color: var(--muted); margin-bottom: 24px; }
+    .janini-r { background: var(--mint); padding: 48px; display: grid; gap: 16px; align-content: center; }
+    .doc { display: flex; gap: 16px; align-items: center; background: white; border-radius: 20px; padding: 16px; }
+    .doc img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+    .doc b { display: block; font-family: var(--head); font-size: 1.0625rem; }
+    .doc span { font-size: .8125rem; color: var(--muted); }
+    .janini-logo { height: 36px; width: auto; margin-bottom: 4px; border-radius: 6px; }
+
+    /* Built for India */
+    .india-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .india-grid .card h3 { font-size: 1.125rem; margin: 14px 0 6px; }
+    .india-grid .card p { font-size: .9rem; color: var(--muted); }
+    .india-grid .emoji { font-size: 1.75rem; }
+
+    /* Pricing */
+    .pricing { background: white; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .price-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .step { border-radius: 24px; padding: 32px 28px; position: relative; }
+    .step .when { font-size: .8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; opacity: .8; }
+    .step .amt { font-family: var(--head); font-size: 2.75rem; font-weight: 600; line-height: 1.1; margin: 10px 0 6px; }
+    .step p { font-size: .9375rem; opacity: .85; }
+    .price-notes { display: flex; gap: 12px 28px; flex-wrap: wrap; justify-content: center; margin-top: 32px; font-size: .9375rem; color: var(--muted); }
+    .price-notes span::before { content: '✓ '; color: var(--teal); font-weight: 800; }
+
+    /* CTA */
+    .cta { text-align: center; }
+    .cta-box { background: linear-gradient(135deg, #0f766e 0%, #0d9488 55%, #14b8a6 100%); color: white; border-radius: 32px; padding: 72px 32px; position: relative; overflow: hidden; }
+    .cta-box::after { content: ''; position: absolute; width: 420px; height: 420px; right: -120px; top: -160px; border-radius: 50%; background: rgba(255,255,255,.08); }
+    .cta-box h2 { font-size: clamp(2rem, 4.4vw, 3rem); margin-bottom: 14px; position: relative; }
+    .cta-box p { font-size: 1.125rem; opacity: .9; margin-bottom: 32px; position: relative; }
+    .cta-box .btn { position: relative; }
+    .cta-box .btn-white { background: white; color: var(--ink); }
+    .cta-box .btn-white:hover { transform: translateY(-1px); }
+    .cta-box .btn-line { border: 1px solid rgba(255,255,255,.5); color: white; }
+
+    footer { padding: 56px 0 40px; font-size: .9rem; color: var(--muted); }
+    .foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
+    .foot h4 { font-family: var(--head); color: var(--ink); font-weight: 600; margin-bottom: 12px; font-size: 1rem; }
+    .foot a { display: block; margin-bottom: 8px; }
+    .foot a:hover { color: var(--ink); }
+    .foot-bottom { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .8125rem; }
+
+    .wa-fab { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 56px; height: 56px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 12px 28px -10px rgba(0,0,0,.4); transition: transform .15s; }
+    .wa-fab:hover { transform: scale(1.06); }
+
+    /* Tablets */
+    @media (max-width: 1000px) {
+      .hero-grid, .split, .janini { grid-template-columns: 1fr; }
+      .hero-grid { gap: 40px; }
+      .feat-grid, .india-grid { grid-template-columns: repeat(2, 1fr); }
+      .strip-grid { grid-template-columns: repeat(2, 1fr); }
+      .split .visual { order: -1; }
+      .nav-links { display: none; }
     }
-
-    .checklist-row {
-      display: flex; align-items: center; gap: 12px;
-      padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.08);
-      font-size: 14px; color: rgba(255,255,255,0.9);
-    }
-    .checklist-row:last-child { border-bottom: none; }
-
-    .check-icon {
-      width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 12px; font-weight: 800;
-    }
-    .check-done { background: var(--teal); color: white; }
-    .check-missed { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.1); }
-    .check-missed::after { content: '—'; }
-
-    .checklist-label-strike { text-decoration: line-through; color: rgba(255,255,255,0.5); }
-    .check-ai-badge {
-      margin-left: auto; font-size: 10px; font-weight: 700; letter-spacing: 0.05em;
-      text-transform: uppercase; color: var(--teal); background: rgba(15,126,107,0.15);
-      border: 1px solid rgba(15,126,107,0.3); padding: 2px 8px; border-radius: 20px;
-      white-space: nowrap;
-    }
-
-    .ai-pillars { display: flex; flex-direction: column; gap: 1.25rem; }
-
-    .ai-pillar {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-left: 3px solid var(--teal);
-      border-radius: 0 12px 12px 0;
-      padding: 1.5rem;
-    }
-
-    .ai-pillar-title { font-size: 16px; font-weight: 700; color: white; margin-bottom: 4px; letter-spacing: -0.02em; }
-    .ai-pillar-desc { font-size: 13.5px; color: rgba(255,255,255,0.82); line-height: 1.6; }
-
-    /* ═══ MODULES ═══ */
-    .modules-grid {
-      display: grid; grid-template-columns: repeat(4,1fr);
-      gap: 1px; background: var(--border);
-      border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-top: 0.5rem;
-    }
-    .mod { background: white; padding: 1.75rem 1.5rem; transition: background 0.15s; }
-    .mod:hover { background: var(--teal-light); }
-    .mod-icon { font-size: 20px; margin-bottom: 0.65rem; display: block; }
-    .mod-name { font-size: 15px; font-weight: 800; color: var(--dark); letter-spacing: -0.025em; margin-bottom: 2px; }
-    .mod-tag { font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.65rem; }
-    .mod-line { font-size: 13px; color: var(--muted); line-height: 1.55; }
-
-    /* ═══ ROLES WITH HOVER AI ═══ */
-    .roles-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 0.5rem; }
-
-    .role-card {
-      border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem;
-      background: white; position: relative; overflow: visible;
-      transition: border-color 0.15s, box-shadow 0.15s;
-      cursor: default;
-    }
-    .role-card:hover { border-color: var(--teal); box-shadow: 0 0 0 4px var(--teal-light); z-index: 10; }
-
-    .role-icon { font-size: 28px; margin-bottom: 0.875rem; }
-    .role-name { font-size: 15px; font-weight: 800; color: var(--dark); letter-spacing: -0.02em; margin-bottom: 4px; }
-    .role-badge { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); background: var(--teal-light); padding: 2px 9px; border-radius: 20px; margin-bottom: 0.875rem; }
-    .role-problem { font-size: 13px; font-weight: 500; color: var(--mid); line-height: 1.55; margin-bottom: 0.75rem; }
-    .role-fix { font-size: 13px; color: var(--muted); line-height: 1.55; padding-top: 0.75rem; border-top: 1px solid var(--border); }
-    .role-fix strong { color: var(--teal); font-weight: 700; }
-
-    /* AI hover tooltip */
-    .ai-tooltip {
-      display: none;
-      position: absolute;
-      bottom: calc(100% + 10px); left: 0; right: 0;
-      background: #0C1F1B;
-      border: 1px solid rgba(15,126,107,0.4);
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      z-index: 50;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-    }
-    .ai-tooltip::after {
-      content: '';
-      position: absolute;
-      top: 100%; left: 24px;
-      border: 8px solid transparent;
-      border-top-color: #0C1F1B;
-    }
-    .role-card:hover .ai-tooltip { display: block; }
-
-    .ai-tooltip-label {
-      font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--teal); margin-bottom: 0.75rem;
-      display: flex; align-items: center; gap: 6px;
-    }
-    .ai-tooltip-label::before { content: '⚡'; font-size: 12px; }
-    .ai-tooltip-items { list-style: none; display: flex; flex-direction: column; gap: 5px; }
-    .ai-tooltip-items li {
-      font-size: 12.5px; color: rgba(255,255,255,0.75); display: flex; gap: 8px; line-height: 1.45;
-    }
-    .ai-tooltip-items li::before { content: '→'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
-
-    /* ═══ WHATSAPP DEMO ═══ */
-    .wa-demo-section { background: var(--bg); padding: 5rem 2rem; }
-    .wa-demo-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .wa-demo-left .heading { margin-bottom: 1rem; }
-    .wa-demo-left .subhead { margin-bottom: 1.75rem; }
-
-    .wa-highlights { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .wa-highlights li { display: flex; gap: 10px; font-size: 14px; color: var(--mid); line-height: 1.5; }
-    .wa-highlights li::before { content: '→'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-
-    /* Phone frame */
-    .phone-frame {
-      background: #1A1A2E;
-      border-radius: 40px;
-      padding: 12px;
-      max-width: 320px;
-      margin: 0 auto;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.25);
-    }
-    .phone-screen {
-      background: #ECE5DD;
-      border-radius: 30px;
-      overflow: hidden;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .wa-header {
-      background: #075E54;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .wa-avatar {
-      width: 36px; height: 36px; border-radius: 50%;
-      background: #25D366; display: flex; align-items: center; justify-content: center;
-      font-size: 16px; color: white; font-weight: 700; flex-shrink: 0;
-    }
-    .wa-header-info { flex: 1; }
-    .wa-clinic-name { font-size: 14px; font-weight: 700; color: white; }
-    .wa-status { font-size: 11px; color: rgba(255,255,255,0.7); }
-    .wa-messages { padding: 12px; display: flex; flex-direction: column; gap: 8px; max-height: 440px; overflow: hidden; }
-
-    .msg { max-width: 82%; padding: 8px 12px; border-radius: 12px; font-size: 12.5px; line-height: 1.55; }
-    .msg-patient { background: white; align-self: flex-start; border-radius: 0 12px 12px 12px; }
-    .msg-clinic { background: #D9FDD3; align-self: flex-end; border-radius: 12px 12px 0 12px; }
-    .msg-time { font-size: 10px; color: #8A9BAE; text-align: right; margin-top: 3px; }
-    .msg-ai-badge {
-      display: inline-flex; align-items: center; gap: 4px;
-      font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
-      color: var(--teal); background: var(--teal-light);
-      padding: 2px 6px; border-radius: 4px; margin-top: 4px;
-    }
-
-    .triage-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--teal);
-      border-radius: 8px;
-      margin: 0 12px 12px;
-      padding: 10px 12px;
-      font-size: 11.5px;
-    }
-    .triage-card-title { font-size: 10px; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
-    .triage-row { display: flex; justify-content: space-between; padding: 2px 0; color: var(--mid); }
-    .triage-val { font-weight: 700; color: var(--dark); }
-
-    /* ═══ JOURNEY STRIP ═══ */
-    .journey-strip { background: var(--teal); padding: 3rem 2rem; }
-    .journey-inner { max-width: 1200px; margin: 0 auto; }
-    .journey-title { font-size: 13px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-align: center; margin-bottom: 2rem; }
-    .journey-steps { display: flex; align-items: flex-start; justify-content: space-between; position: relative; }
-    .journey-steps::before { content: ''; position: absolute; top: 20px; left: 5%; right: 5%; height: 2px; background: rgba(255,255,255,0.2); z-index: 0; }
-    .journey-step { flex: 1; text-align: center; position: relative; z-index: 1; }
-    .journey-dot { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; font-size: 16px; }
-    .journey-step-name { font-size: 11px; font-weight: 700; color: white; letter-spacing: -0.01em; }
-    .journey-step-mod { font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 2px; }
-
-    /* ═══ CTA ═══ */
-    .cta-block { background: var(--dark); padding: 6rem 2rem; text-align: center; }
-    .cta-block h2 { font-size: clamp(28px,4vw,44px); font-weight: 800; color: white; letter-spacing: -0.035em; margin-bottom: 0.75rem; line-height: 1.15; }
-    .cta-block p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; }
-    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .cta-block .btn-primary { background: var(--teal); }
-    .cta-block .btn-primary:hover { background: var(--teal-dark); }
-    .cta-block .btn-outline { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); }
-    .cta-block .btn-outline:hover { background: rgba(255,255,255,0.07); color: white; }
-
-    /* ═══ FOOTER ═══ */
-    footer { background: #0D1117; color: rgba(255,255,255,0.6); padding: 3.5rem 2rem 2rem; }
-    .footer-grid { max-width: 1200px; margin: 0 auto 2.5rem; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
-    .footer-brand .logo-link img { height: 28px; margin-bottom: 0.75rem; }
-    .footer-brand p { font-size: 13px; line-height: 1.7; max-width: 240px; }
-    .footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 1rem; }
-    .footer-col a { display: block; font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 2.1; transition: color 0.15s; }
-    .footer-col a:hover { color: white; }
-    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
-    .wa-btn { position: fixed; bottom: 1.75rem; right: 1.75rem; width: 54px; height: 54px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.45); transition: transform 0.15s; z-index: 999; }
-    .wa-btn:hover { transform: scale(1.1); color: white; }
-
-    /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      .modules-grid { grid-template-columns: repeat(2,1fr); }
-      .ai-grid { grid-template-columns: 1fr; }
-      .wa-demo-inner { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      nav { height: auto; padding: 1rem 1.25rem; flex-wrap: wrap; }
-      .nav-links { gap: 1rem; margin-left: 0; flex-wrap: wrap; }
-      .hero { padding: 4rem 1.25rem 3rem; }
-      .stats-inner { grid-template-columns: repeat(2,1fr); }
-      .stat:nth-child(2) { border-right: none; }
-      .stat:nth-child(3) { border-top: 1px solid var(--border); }
-      .stat:last-child { border-top: 1px solid var(--border); border-right: none; }
-      .modules-grid { grid-template-columns: repeat(2,1fr); }
-      .roles-grid { grid-template-columns: 1fr; }
-      .journey-steps { flex-wrap: wrap; gap: 1rem; }
-      .journey-steps::before { display: none; }
-      .journey-step { flex: 0 0 30%; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .footer-bottom { flex-direction: column; gap: 6px; text-align: center; }
-      .ai-tooltip { position: static; margin-top: 1rem; display: none; border-radius: 10px; }
-      .role-card:hover .ai-tooltip { display: block; }
-    }
-    @media (max-width: 480px) {
-      .modules-grid { grid-template-columns: 1fr; }
+    /* Phones */
+    @media (max-width: 640px) {
+      .wrap { padding: 0 16px; }
+      section { padding: 64px 0; }
+      .hero { padding: 32px 0 56px; }
+      .hero .lede { font-size: 1.0625rem; }
+      .hero-ctas .btn { flex: 1 1 100%; }
+      .problem-grid, .feat-grid, .india-grid, .price-steps, .foot { grid-template-columns: 1fr; }
+      .strip-grid { grid-template-columns: 1fr; gap: 14px; }
+      .float-a { left: -6px; top: 36%; }
+      .float-b { display: none; }
+      .phone { right: -4px; width: 36%; border-radius: 22px; padding: 5px; }
+      .phone img { border-radius: 18px; }
+      .janini-l, .janini-r { padding: 28px 20px; }
+      .nav-right .signin { display: none; }
+      .cta-box { padding: 56px 20px; border-radius: 24px; }
+      .card, .feat, .step { padding: 24px 20px; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<header>
-  <nav>
-    <a href="/" class="logo-link">
-      <img src="assets/logo.png" alt="IVF Computer" />
-    </a>
-    <ul class="nav-links">
-      <li><a href="#modules">Platform</a></li>
-      <li><a href="#people">Your team</a></li>
-      <li><a href="/case-study">Case study</a></li>
-      <li><a href="/pricing">Pricing</a></li>
-      <li><a href="/about">About us</a></li>
-    </ul>
-    <a href="https://wa.me/919900638277?text=I'd%20like%20to%20see%20IVF%20Computer" class="btn btn-primary" style="margin-left:auto">Book a demo</a>
-  </nav>
+<header id="top">
+  <div class="wrap nav">
+    <a href="/" class="logo"><span class="logo-mark">IC</span>IVFComputer</a>
+    <nav class="nav-links">
+      <a href="#features">What it does</a>
+      <a href="#patients">For patients</a>
+      <a href="#janini">Janini IVF</a>
+      <a href="#pricing">Pricing</a>
+      <a href="/about">About us</a>
+    </nav>
+    <div class="nav-right">
+      <a class="signin" href="https://janini.ivfcomputer.com">Sign in</a>
+      <a class="btn btn-primary" href="https://wa.me/919900638277?text=I'd%20like%20to%20see%20IVFComputer">Book a demo</a>
+    </div>
+  </div>
 </header>
 
-<!-- BANNER -->
-<div class="banner">
-  <strong>Case Study</strong> · <a href="#case-study">Janini IVF, New Delhi</a> — live on a dedicated IVFComputer instance →
-</div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-pill">AI Operating System · Fertility Clinics</div>
-  <h1>From the first WhatsApp<br>to the <span class="accent">baby's first birthday.</span></h1>
-  <p class="hero-sub">One platform. Thirteen modules. Every operational surface of your fertility clinic — IVF, IUI, and male infertility — run by AI so your team can focus on patients.</p>
-  <div class="hero-cta">
-    <a href="https://wa.me/919900638277?text=I'd%20like%20a%20personalized%20demo" class="btn btn-primary btn-lg">Book a personalized demo →</a>
-    <a href="#modules" class="btn btn-outline btn-lg">Explore the platform</a>
-  </div>
-</section>
-
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat"><div class="stat-n">13</div><div class="stat-l">Modules · every clinic touchpoint</div></div>
-    <div class="stat"><div class="stat-n">14mo</div><div class="stat-l">Enquiry to baby's first birthday</div></div>
-    <div class="stat"><div class="stat-n">0</div><div class="stat-l">Setup fees · outcome-based only</div></div>
-    <div class="stat"><div class="stat-n">2%</div><div class="stat-l">Of clinic revenue · that's all</div></div>
-  </div>
-</div>
-
-<!-- AI SECTION -->
-<section class="ai-section">
-  <div class="ai-inner">
-    <div class="eyebrow">Why AI</div>
-    <div class="heading">Humans don't follow checklists.<br><em>AI does.</em></div>
-    <p class="subhead" style="max-width:580px;">Every missed follow-up, every lost lead, every patient who didn't get a birthday message — it wasn't negligence. It was a checklist no human had time to run. IVFComputer runs it for you.</p>
-
-    <div class="ai-grid">
-      <div class="ai-checklist">
-        <div class="ai-checklist-title">Without IVFComputer</div>
-        <div class="checklist-row">
-          <div class="check-icon check-missed"></div>
-          <span class="checklist-label-strike">Follow up with Mrs. Sharma — Day 3 of stim</span>
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Live at fertility clinics in India</span>
+        <h1>Your fertility clinic, <em>calm</em> and in one place.</h1>
+        <p class="lede">WhatsApp messages, lab reports, the EMR, every cycle, billing and a patient app, all in one system. Each morning, your doctors see what needs them today.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://wa.me/919900638277?text=I'd%20like%20a%20demo%20of%20IVFComputer">Book a 30-minute demo →</a>
+          <a class="btn btn-ghost" href="#features">See what it does</a>
         </div>
-        <div class="checklist-row">
-          <div class="check-icon check-missed"></div>
-          <span class="checklist-label-strike">Check WhatsApp for last night's clinical messages</span>
-        </div>
-        <div class="checklist-row">
-          <div class="check-icon check-missed"></div>
-          <span class="checklist-label-strike">Update pharmacy stock after yesterday's dispensations</span>
-        </div>
-        <div class="checklist-row">
-          <div class="check-icon check-missed"></div>
-          <span class="checklist-label-strike">Send pregnancy gift to patient who tested positive</span>
-        </div>
-        <div class="checklist-row">
-          <div class="check-icon check-missed"></div>
-          <span class="checklist-label-strike">Route urgent message to right doctor</span>
-        </div>
-        <div class="checklist-row">
-          <div class="check-icon check-missed"></div>
-          <span class="checklist-label-strike">Ask happy patient for Google review</span>
-        </div>
-        <div class="checklist-row">
-          <div class="check-icon check-missed"></div>
-          <span class="checklist-label-strike">Update lead score for cold enquiry from last week</span>
+        <div class="hero-proof">
+          <img src="assets/dr-rutvij-dalal.jpg" alt="">
+          <img src="assets/dr-akanksha-mishra.jpg" alt="">
+          <span>Running every day at <b>Janini IVF</b>, New Delhi</span>
         </div>
       </div>
 
-      <div class="ai-checklist">
-        <div class="ai-checklist-title">With IVFComputer — AI handles it</div>
-        <div class="checklist-row">
-          <div class="check-icon check-done">✓</div>
-          <span>Day 3 stim reminder sent automatically to coordinator</span>
-          <span class="check-ai-badge">ClinicOS</span>
+      <div class="shot" aria-label="The IVFComputer doctor's dashboard, and the patient app on a phone">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span>yourclinic.ivfcomputer.com</span></div>
+          <img src="assets/app-dashboard.jpg" alt="The doctor's dashboard: patients waiting for a reply, reports to review, and active cycles" width="1800" height="1125">
         </div>
-        <div class="checklist-row">
-          <div class="check-icon check-done">✓</div>
-          <span>11 PM message classified as "spotting concern" → routed to Dr. Meera</span>
-          <span class="check-ai-badge">Live Triage</span>
-        </div>
-        <div class="checklist-row">
-          <div class="check-icon check-done">✓</div>
-          <span>Dispensation logged, stock updated across all 8 centers</span>
-          <span class="check-ai-badge">PharmacyOS</span>
-        </div>
-        <div class="checklist-row">
-          <div class="check-icon check-done">✓</div>
-          <span>Gift basket ordered on Amazon, milestone logged</span>
-          <span class="check-ai-badge">DelightOS</span>
-        </div>
-        <div class="checklist-row">
-          <div class="check-icon check-done">✓</div>
-          <span>Message intent classified, assigned to named clinician</span>
-          <span class="check-ai-badge">EngageOS</span>
-        </div>
-        <div class="checklist-row">
-          <div class="check-icon check-done">✓</div>
-          <span>NPS triggered at discharge → Google review link sent</span>
-          <span class="check-ai-badge">GrowthOS</span>
-        </div>
-        <div class="checklist-row">
-          <div class="check-icon check-done">✓</div>
-          <span>Lead score updated based on re-engagement signal</span>
-          <span class="check-ai-badge">LeadOS</span>
-        </div>
+        <div class="phone"><img src="assets/app-patient.jpg" alt="The patient app, showing her two-week wait and today's medicines" loading="lazy"></div>
+        <div class="float float-a"><div class="ico" style="background:var(--mint);color:var(--mint-ink)">✓</div><div><b>Report filed</b><small>AMH · to the right patient</small></div></div>
+        <div class="float float-b"><div class="ico" style="background:var(--amber);color:var(--amber-ink)">!</div><div><b>6th IUI coming up</b><small>Worth a talk about IVF?</small></div></div>
       </div>
     </div>
+  </section>
 
-    <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:1.25rem; margin-top:2rem;">
-      <div class="ai-pillar">
-        <div class="ai-pillar-title">AI that classifies intent</div>
-        <div class="ai-pillar-desc">Every WhatsApp message triaged into 1 of 16 clinical intents — clinical emergency to cost inquiry — before any human reads it.</div>
-      </div>
-      <div class="ai-pillar">
-        <div class="ai-pillar-title">AI that routes to the right person</div>
-        <div class="ai-pillar-desc">Routing based on the named clinician on the patient's active cycle. Stage-aware — the same question means different things on Day 6 vs Day 1.</div>
-      </div>
-      <div class="ai-pillar">
-        <div class="ai-pillar-title">AI that closes the loop</div>
-        <div class="ai-pillar-desc">Milestones, gifts, testimonials, follow-ups — all triggered automatically at the right moment, without anyone remembering to do it.</div>
-      </div>
+  <!-- Strip -->
+  <div class="strip">
+    <div class="wrap strip-grid">
+      <div class="strip-item"><span class="ic" style="background:var(--mint)">💬</span>WhatsApp, answered on time</div>
+      <div class="strip-item"><span class="ic" style="background:var(--amber)">📄</span>Reports filed for you</div>
+      <div class="strip-item"><span class="ic" style="background:var(--sky)">📱</span>Works on any phone</div>
+      <div class="strip-item"><span class="ic" style="background:var(--lilac)">🔒</span>Each clinic's data kept apart</div>
     </div>
   </div>
-</section>
 
-<!-- MODULES -->
-<section id="modules">
-  <div class="s">
-    <div class="eyebrow">Platform</div>
-    <div class="heading">Thirteen modules. One operating system.</div>
-    <p class="subhead">Each module replaces a tool you already pay for — and connects to all the others. Full support for IVF, IUI, and male infertility pathways.</p>
-    <div class="modules-grid">
-      <div class="mod"><span class="mod-icon">🎯</span><div class="mod-name">LeadOS</div><div class="mod-tag">Acquisition</div><div class="mod-line">AI-ranked pipeline from WhatsApp, ads, referrals, and walk-ins. Never lose a warm lead.</div></div>
-      <div class="mod"><span class="mod-icon">💬</span><div class="mod-name">EngageOS</div><div class="mod-tag">Engagement</div><div class="mod-line">16-intent AI triage routes every WhatsApp to the right clinician — even at 11 PM.</div></div>
-      <div class="mod"><span class="mod-icon">🧠</span><div class="mod-name">CaseOS</div><div class="mod-tag">Clinical Intelligence</div><div class="mod-line">Pre-consult brief generated before the doctor walks in. AMH, AFC, history, pathway — in one summary.</div></div>
-      <div class="mod"><span class="mod-icon">🔬</span><div class="mod-name">ClinicOS</div><div class="mod-tag">Clinical</div><div class="mod-line">Full cycle state machine — registration through outcome. One screen, not five tabs.</div></div>
-      <div class="mod"><span class="mod-icon">👤</span><div class="mod-name">PatientOS</div><div class="mod-tag">Experience</div><div class="mod-line">Medication reminders, reports, queue position — all in a WhatsApp link. No app download.</div></div>
-      <div class="mod"><span class="mod-icon">📈</span><div class="mod-name">GrowthOS</div><div class="mod-tag">Growth</div><div class="mod-line">Doctor analytics, channel ROI, NPS — every lead traced from source to cycle.</div></div>
-      <div class="mod"><span class="mod-icon">🎉</span><div class="mod-name">DelightOS</div><div class="mod-tag">Delight</div><div class="mod-line">Pregnancy gift → delivery testimonial → baby's first birthday. 14 months, automated.</div></div>
-      <div class="mod"><span class="mod-icon">💊</span><div class="mod-name">PharmacyOS</div><div class="mod-tag">Pharmacy</div><div class="mod-line">Multi-center inventory, vendor POs, margin per drug. Recover ₹1.6 Cr/year in medicine margin.</div></div>
-      <div class="mod"><span class="mod-icon">🧪</span><div class="mod-name">LabOS</div><div class="mod-tag">Embryology</div><div class="mod-line">Blast grading, cryo register, double-witness audit trail. WHO-2021 semen analysis with auto TMSC.</div></div>
-      <div class="mod"><span class="mod-icon">💰</span><div class="mod-name">BillingOS</div><div class="mod-tag">Finance</div><div class="mod-line">Stage-wise invoicing tied to the cycle. Payments, outstanding, and overdue — visible per center.</div></div>
-      <div class="mod"><span class="mod-icon">✍️</span><div class="mod-name">ConsentOS</div><div class="mod-tag">Compliance</div><div class="mod-line">ART Act 2021 consent forms signed on WhatsApp in 30 seconds. AI pre-filled, multi-signatory, audit-ready.</div></div>
-      <div class="mod"><span class="mod-icon">📋</span><div class="mod-name">EMR</div><div class="mod-tag">Records</div><div class="mod-line">The full couple record — investigations, monitoring, cycle history, and doctor notes in one place.</div></div>
-      <div class="mod"><span class="mod-icon">🏢</span><div class="mod-name">AdminOS</div><div class="mod-tag">Administration</div><div class="mod-line">Centers, roles, users, treatments and charges — configured by your team, audited by default.</div></div>
+  <!-- Problem -->
+  <section class="problem">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why clinics use it</span>
+        <h2>A fertility clinic runs on WhatsApp and memory.</h2>
+        <p>Nobody is careless. There's simply too much for any team to hold in their heads.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="card reveal"><span class="tag" style="background:var(--rose);color:var(--rose-ink)">The inbox</span><div class="q">"Did anyone reply to her?"</div><p>Enquiries, worried questions and reports all land in one WhatsApp. Messages get buried, and patients wait.</p></div>
+        <div class="card reveal"><span class="tag" style="background:var(--amber);color:var(--amber-ink)">The reports</span><div class="q">"Whose report is this?"</div><p>Labs send PDFs from their own numbers, named any way. Someone has to open each one and work out who it belongs to.</p></div>
+        <div class="card reveal"><span class="tag" style="background:var(--sky);color:var(--sky-ink)">The history</span><div class="q">"What did we try last time?"</div><p>Across hundreds of couples, no doctor can remember every earlier cycle, every result, every pattern.</p></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PATIENT JOURNEY STRIP -->
-<div class="journey-strip">
-  <div class="journey-inner">
-    <div class="journey-title">The 14-month patient journey — fully covered</div>
-    <div class="journey-steps">
-      <div class="journey-step"><div class="journey-dot">💬</div><div class="journey-step-name">First message</div><div class="journey-step-mod">LeadOS</div></div>
-      <div class="journey-step"><div class="journey-dot">📅</div><div class="journey-step-name">Consultation</div><div class="journey-step-mod">EngageOS</div></div>
-      <div class="journey-step"><div class="journey-dot">🧠</div><div class="journey-step-name">Pre-consult brief</div><div class="journey-step-mod">CaseOS</div></div>
-      <div class="journey-step"><div class="journey-dot">✍️</div><div class="journey-step-name">Consent on WhatsApp</div><div class="journey-step-mod">ConsentOS</div></div>
-      <div class="journey-step"><div class="journey-dot">🔬</div><div class="journey-step-name">Cycle start</div><div class="journey-step-mod">ClinicOS</div></div>
-      <div class="journey-step"><div class="journey-dot">💊</div><div class="journey-step-name">Stimulation</div><div class="journey-step-mod">PatientOS</div></div>
-      <div class="journey-step"><div class="journey-dot">🥚</div><div class="journey-step-name">Retrieval</div><div class="journey-step-mod">ClinicOS</div></div>
-      <div class="journey-step"><div class="journey-dot">🤰</div><div class="journey-step-name">Pregnancy</div><div class="journey-step-mod">DelightOS</div></div>
-      <div class="journey-step"><div class="journey-dot">👶</div><div class="journey-step-name">Delivery</div><div class="journey-step-mod">DelightOS</div></div>
-      <div class="journey-step"><div class="journey-dot">🎂</div><div class="journey-step-name">1st birthday</div><div class="journey-step-mod">DelightOS</div></div>
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What it does</span>
+        <h2>Everything your clinic does, in one place.</h2>
+        <p>One system for your doctors, coordinators, embryologists and front desk, each seeing only what they need.</p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat reveal" style="background:var(--mint);color:var(--mint-ink)"><div class="ic">💬</div><h3>Messages</h3><p>Every WhatsApp in one shared inbox, longest wait first. AI drafts the reply, and your team checks it before it goes.</p></div>
+        <div class="feat reveal" style="background:var(--amber);color:var(--amber-ink)"><div class="ic">📄</div><h3>Reports</h3><p>Lab reports are read and filed to the right patient. When it isn't sure whose report it is, it asks instead of guessing.</p></div>
+        <div class="feat reveal" style="background:var(--sky);color:var(--sky-ink)"><div class="ic">📋</div><h3>EMR</h3><p>The whole couple's record: history, investigations, scans, cycles and notes, ready before the consult starts.</p></div>
+        <div class="feat reveal" style="background:var(--lilac);color:var(--lilac-ink)"><div class="ic">🔬</div><h3>Cycles and lab</h3><p>IVF, IUI and frozen transfers tracked day by day, with embryo grading, the cryo register and witness records.</p></div>
+        <div class="feat reveal" style="background:var(--rose);color:var(--rose-ink)"><div class="ic">✍️</div><h3>Consents and registers</h3><p>ART Act consents, registers and the monthly PC&amp;PNDT returns, filled in from the records you already keep.</p></div>
+        <div class="feat reveal" style="background:#f1f5f9;color:#334155"><div class="ic">💳</div><h3>Billing</h3><p>UPI QR codes for the exact amount, plus cash and card, with a numbered receipt for every payment.</p></div>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- CASE STUDY: JANINI IVF -->
-<section id="case-study" style="background:var(--teal-light);padding:5rem 1.5rem;">
-  <div style="max-width:1080px;margin:0 auto;">
-    <div class="eyebrow">Case Study</div>
-    <div class="heading">Janini IVF, New Delhi — live on IVFComputer.</div>
-    <p class="subhead" style="max-width:640px;">Janini IVF runs its Paschim Vihar center on a dedicated IVFComputer instance — every module, from the first WhatsApp enquiry to embryology and billing, on one platform.</p>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;margin-top:2.5rem;align-items:start;">
-      <div style="background:white;border-radius:16px;padding:2rem;box-shadow:0 4px 24px rgba(15,126,107,0.08);">
-        <img src="assets/janini-logo.jpg" alt="Janini IVF" style="height:56px;margin-bottom:1.25rem;" />
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;color:var(--mid);font-size:0.9375rem;line-height:1.6;">
-          <li>✓ <strong>Dedicated instance</strong> at janini.ivfcomputer.com — Janini's own branding, data, and users</li>
-          <li>✓ <strong>All 13 modules live</strong> — LeadOS to AdminOS, including embryology lab, billing, and WhatsApp consent</li>
-          <li>✓ <strong>IVF, IUI, and male infertility</strong> pathways — each with its own timeline, lab flow, and patient portal</li>
-          <li>✓ <strong>WHO-2021 semen analysis</strong> with automatic TMSC calculation and IUI recommendation</li>
-          <li>✓ <strong>ART Act 2021 consent</strong> signed by patient, partner, and doctor over WhatsApp — no clipboard</li>
+  <!-- Patterns -->
+  <section>
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="eyebrow">The fertility graph</span>
+        <h2>It remembers the patterns doctors can't.</h2>
+        <p>IVFComputer links every visit, result and cycle into one journey per couple, then looks across all of them. When a patient walks in, the doctor sees what stands out, and which earlier patients looked most like her.</p>
+        <ul class="ticks">
+          <li>Repeated IUIs with no change of plan</li>
+          <li>A thin lining at transfer, across cycles</li>
+          <li>Past patients with a similar story, and what worked for them</li>
         </ul>
       </div>
-      <div style="display:flex;flex-direction:column;gap:1.25rem;">
-        <div style="background:white;border-radius:16px;padding:1.5rem;display:flex;gap:1.25rem;align-items:center;box-shadow:0 4px 24px rgba(15,126,107,0.08);">
-          <img src="assets/dr-rutvij-dalal.jpg" alt="Dr. Rutvij Dalal" style="width:88px;height:88px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
-          <div>
-            <div style="font-weight:800;color:var(--dark);">Dr. Rutvij Dalal</div>
-            <div style="color:var(--teal);font-weight:600;font-size:0.875rem;">Medical Director · IVF Specialist</div>
-            <div style="color:var(--muted);font-size:0.875rem;margin-top:4px;">Award-winning IVF specialist leading Janini's clinical program on IVFComputer.</div>
-          </div>
+      <div class="visual reveal">
+        <div class="pattern-stack">
+          <div class="pat"><div class="badge" style="background:var(--rose);color:var(--rose-ink)">6</div><div><b>Six IUIs, all negative</b><span>Age 34 · PCOS · AMH 1.1</span><div class="journey"><i>IUI 1</i><i>IUI 2</i><i>IUI 3</i><i>IUI 4</i><i>IUI 5</i><i>IUI 6</i></div></div></div>
+          <div class="pat"><div class="badge" style="background:var(--mint);color:var(--mint-ink)">3</div><div><b>3 past patients looked like her</b><span>Two moved to IVF after their third IUI</span><div class="journey"><i>IUI ×3</i><i class="ok">IVF</i><i class="ok">Positive</i></div></div></div>
+          <div class="pat"><div class="badge" style="background:var(--amber);color:var(--amber-ink)">!</div><div><b>Lining under 8 mm</b><span>At the last two transfers</span></div></div>
         </div>
-        <div style="background:white;border-radius:16px;padding:1.5rem;display:flex;gap:1.25rem;align-items:center;box-shadow:0 4px 24px rgba(15,126,107,0.08);">
-          <img src="assets/dr-akanksha-mishra.jpg" alt="Dr. Akanksha Mishra" style="width:88px;height:88px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
-          <div>
-            <div style="font-weight:800;color:var(--dark);">Dr. Akanksha Mishra</div>
-            <div style="color:var(--teal);font-weight:600;font-size:0.875rem;">Fertility Specialist · Embryologist</div>
-            <div style="color:var(--muted);font-size:0.875rem;margin-top:4px;">Senior embryologist running Janini's lab — blast grading to cryo register — on LabOS.</div>
-          </div>
-        </div>
-        <a href="https://wa.me/919900638277?text=I'd%20like%20to%20hear%20about%20the%20Janini%20deployment" class="btn btn-primary" style="text-align:center;">Ask us about the Janini deployment →</a>
+        <p class="fine">Illustration with made-up patients. The patterns shown to a doctor always come from their own clinic's records.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOR YOUR TEAM -->
-<div class="s-alt" id="people">
-  <div class="s">
-    <div class="eyebrow">For your team</div>
-    <div class="heading">Built for every role in the clinic.</div>
-    <p class="subhead">Hover to see exactly what AI does for each person. Every role. Zero dropped balls.</p>
-    <div class="roles-grid">
-
-      <div class="role-card">
-        <div class="ai-tooltip">
-          <div class="ai-tooltip-label">AI does this automatically</div>
-          <ul class="ai-tooltip-items">
-            <li>Nightly rollup: center metrics, doctor performance, source ROI</li>
-            <li>Center Focus — switch branch context in one click</li>
-            <li>Audit trail on every admin change, defensible by default</li>
-            <li>Alerts when a center dips below expected cycle volume</li>
-          </ul>
-        </div>
-        <div class="role-icon">🏥</div>
-        <div class="role-name">Clinic owner / Director</div>
-        <div class="role-badge">Visibility, not vibes</div>
-        <div class="role-problem">8 centers. 8 versions of the truth. Monthly reviews are hand-stitched spreadsheets.</div>
-        <div class="role-fix"><strong>AI fix:</strong> Every center rolled up nightly. Doctor-level and source-level analytics, zero manual work.</div>
+  <!-- Patients -->
+  <section class="patient" id="patients">
+    <div class="wrap split">
+      <div class="visual reveal"><div class="phone-lg"><img src="assets/app-patient.jpg" alt="The patient app: her stage, days to her pregnancy test, and today's medicines" loading="lazy"></div></div>
+      <div class="reveal">
+        <span class="eyebrow">For patients</span>
+        <h2>Her own app, for the most anxious weeks of her life.</h2>
+        <p>Every patient gets Ovum Club: her treatment, her medicines and her reports, explained simply. It opens from a WhatsApp link, with nothing to download.</p>
+        <ul class="ticks">
+          <li>Where she is in her cycle, and what happens next</li>
+          <li>Today's medicines, with a tick when she's taken them</li>
+          <li>Her reports and embryo updates in one place</li>
+          <li>Messages to her care team</li>
+        </ul>
       </div>
-
-      <div class="role-card">
-        <div class="ai-tooltip">
-          <div class="ai-tooltip-label">AI does this automatically</div>
-          <ul class="ai-tooltip-items">
-            <li>Classifies every patient message by clinical intent before you see it</li>
-            <li>Routes urgent messages to the right named doctor based on cycle</li>
-            <li>Shows last 50 messages + cycle state + medications on one screen</li>
-            <li>Stage-aware: "bloating" on Day 6 triggers a different route than Day 1</li>
-          </ul>
-        </div>
-        <div class="role-icon">👨‍⚕️</div>
-        <div class="role-name">Doctor</div>
-        <div class="role-badge">One screen. Not five tabs</div>
-        <div class="role-problem">Cycle state, messages, reports, medications — five tools. One patient.</div>
-        <div class="role-fix"><strong>AI fix:</strong> One profile. Everything pre-loaded. Urgent messages routed to your queue, classified by intent.</div>
-      </div>
-
-      <div class="role-card">
-        <div class="ai-tooltip">
-          <div class="ai-tooltip-label">AI does this automatically</div>
-          <ul class="ai-tooltip-items">
-            <li>Classifies "missed dose" questions and routes to coordinator queue</li>
-            <li>Knows who's on Day 6 vs Day 10 — prompts the right scan automatically</li>
-            <li>Adherence tracking on every medication schedule</li>
-            <li>Auto-nudge when a patient hasn't confirmed a reminder</li>
-          </ul>
-        </div>
-        <div class="role-icon">📋</div>
-        <div class="role-name">IVF Coordinator</div>
-        <div class="role-badge">Stop being the router</div>
-        <div class="role-problem">40 patients. Every "did I miss my injection?" routed through you manually.</div>
-        <div class="role-fix"><strong>AI fix:</strong> Messages classified and queued before they reach you. Monitoring prompts triggered automatically by cycle day.</div>
-      </div>
-
-      <div class="role-card">
-        <div class="ai-tooltip">
-          <div class="ai-tooltip-label">AI does this automatically</div>
-          <ul class="ai-tooltip-items">
-            <li>One walk-in form creates lead + intake + appointment + audit log simultaneously</li>
-            <li>AI assigns doctor, center, and slot based on current load</li>
-            <li>WhatsApp confirmation sent automatically on submit</li>
-            <li>Center Pulse shows every patient on premises, in stage, with predicted wait</li>
-          </ul>
-        </div>
-        <div class="role-icon">🪑</div>
-        <div class="role-name">Front desk</div>
-        <div class="role-badge">Clipboard → tablet in 5 min</div>
-        <div class="role-problem">Walk-in lands. Paper form. Photocopy. Entry. Call back office. Assign doctor.</div>
-        <div class="role-fix"><strong>AI fix:</strong> One form. Five operations fired simultaneously. Patient assigned, confirmed, and on Pulse.</div>
-      </div>
-
-      <div class="role-card">
-        <div class="ai-tooltip">
-          <div class="ai-tooltip-label">AI does this automatically</div>
-          <ul class="ai-tooltip-items">
-            <li>Inventory aggregated and visible across all centers in real time</li>
-            <li>AI surfaces bulk order suggestions based on dispensation trends</li>
-            <li>FIFO batch tracking with expiry alerts</li>
-            <li>Margin visible per drug per center — no more invisible leakage</li>
-          </ul>
-        </div>
-        <div class="role-icon">💊</div>
-        <div class="role-name">Pharmacy lead</div>
-        <div class="role-badge">Every batch. Every margin</div>
-        <div class="role-problem">Stock counts on paper. Three drawers to check expiry for one refill.</div>
-        <div class="role-fix"><strong>AI fix:</strong> Inventory live across all centers. AI suggests reorders. Medicine margin visible per drug, per center.</div>
-      </div>
-
-      <div class="role-card">
-        <div class="ai-tooltip">
-          <div class="ai-tooltip-label">AI does this for the patient</div>
-          <ul class="ai-tooltip-items">
-            <li>Companion link shows queue position + what happens next — no login needed</li>
-            <li>AI cohort match: shows anonymized outcomes from patients at her exact stage</li>
-            <li>Suggested questions to ask the doctor today, based on cycle day</li>
-            <li>Auto-updates as staff advances her through visit stages</li>
-          </ul>
-        </div>
-        <div class="role-icon">🌸</div>
-        <div class="role-name">Patient</div>
-        <div class="role-badge">Hope, with information</div>
-        <div class="role-problem">The most uncertain 10 days of her life. Sitting in a waiting room with no idea what comes next.</div>
-        <div class="role-fix"><strong>AI fix:</strong> Companion link — queue position, next step, success stories from patients at her exact stage. Opens from WhatsApp.</div>
-      </div>
-
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- WHATSAPP AI DEMO -->
-<div class="wa-demo-section">
-  <div class="wa-demo-inner">
-    <div class="wa-demo-left">
-      <div class="eyebrow">EngageOS · Live Triage</div>
-      <div class="heading">Every message.<br>The right queue.<br>Instantly.</div>
-      <p class="subhead">A patient messages at 11 PM. Before any human reads it, AI has classified the intent, identified her cycle stage, and routed it to the right doctor. With a reasoning trace.</p>
-      <ul class="wa-highlights">
-        <li>16 clinical intents — from emergency to cost inquiry</li>
-        <li>Stage-aware routing: same message, different meaning on Day 6 vs Day 1</li>
-        <li>Returning patient identified by phone number + full cycle context loaded</li>
-        <li>"Why this routing?" reasoning trace on every classification</li>
-        <li>SLA tags flag when a message has waited too long</li>
-      </ul>
-    </div>
-    <div class="wa-demo-right">
-      <div class="phone-frame">
-        <div class="phone-screen">
-          <div class="wa-header">
-            <div class="wa-avatar">IC</div>
-            <div class="wa-header-info">
-              <div class="wa-clinic-name">Mumbai IVF Center</div>
-              <div class="wa-status">🟢 AI Triage active</div>
-            </div>
-          </div>
-          <div class="wa-messages">
-            <div class="msg msg-patient">
-              Hi, we've been trying for 2 years. What are our options?
-              <div class="msg-time">10:47 PM</div>
-            </div>
-            <div class="msg msg-clinic">
-              I understand — that's been a long journey. Can you tell me a bit about your medical background? Have you had any previous investigations or treatments?
-              <div class="msg-ai-badge">⚡ AI response</div>
-              <div class="msg-time">10:47 PM</div>
-            </div>
-            <div class="msg msg-patient">
-              I'm 34, PCOS, had one failed IUI last year.
-              <div class="msg-time">10:49 PM</div>
-            </div>
-            <div class="msg msg-clinic">
-              Thank you for sharing. Based on this, Dr. Sharma would like to meet you for a full evaluation. I have slots Thu 11am or Sat 10am. Which works better?
-              <div class="msg-ai-badge">⚡ AI response</div>
-              <div class="msg-time">10:49 PM</div>
-            </div>
-            <div class="msg msg-patient">
-              Saturday 10am please.
-              <div class="msg-time">10:50 PM</div>
-            </div>
-            <div class="msg msg-clinic">
-              ✅ Booked! Saturday 10am with Dr. Sharma. Please arrive by 9:45am. We'll send a reminder on Friday evening.
-              <div class="msg-ai-badge">⚡ AI response</div>
-              <div class="msg-time">10:50 PM</div>
-            </div>
-          </div>
-          <div class="triage-card">
-            <div class="triage-card-title">⚡ AI Triage Classification</div>
-            <div class="triage-row"><span>Intent</span><span class="triage-val">New consultation enquiry</span></div>
-            <div class="triage-row"><span>Priority</span><span class="triage-val" style="color:var(--warm)">High · PCOS + failed IUI</span></div>
-            <div class="triage-row"><span>Lead score</span><span class="triage-val">82 / 100</span></div>
-            <div class="triage-row"><span>Routed to</span><span class="triage-val">Dr. Sharma (PCOS specialist)</span></div>
-          </div>
+  <!-- Janini -->
+  <section id="janini">
+    <div class="wrap">
+      <div class="janini reveal">
+        <div class="janini-l">
+          <img class="janini-logo" src="assets/janini-logo.jpg" alt="Janini IVF">
+          <h2>Live at Janini IVF, New Delhi.</h2>
+          <p>Janini runs on its own IVFComputer site, with its own name, its own staff logins and its own patients' data, kept separate from every other clinic.</p>
+          <ul class="ticks">
+            <li>Patient WhatsApp messages in one inbox, with staff alerted when someone replies</li>
+            <li>Lab reports filed to the right patient</li>
+            <li>A morning brief for the doctors, on screen and on WhatsApp</li>
+            <li>ART registers and monthly returns from everyday records</li>
+          </ul>
+        </div>
+        <div class="janini-r">
+          <div class="doc"><img src="assets/dr-rutvij-dalal.jpg" alt="Dr Rutvij Dalal"><div><b>Dr Rutvij Dalal</b><span>Medical Director · IVF specialist</span></div></div>
+          <div class="doc"><img src="assets/dr-akanksha-mishra.jpg" alt="Dr Akanksha Mishra"><div><b>Dr Akanksha Mishra</b><span>Fertility specialist · Embryologist</span></div></div>
+          <a class="btn btn-ghost" style="justify-self:start" href="https://wa.me/919900638277?text=I'd%20like%20to%20hear%20about%20the%20Janini%20setup">Ask us about Janini →</a>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- CTA -->
-<div class="cta-block">
-  <h2>Make your clinic<br>operationally unmissable.</h2>
-  <p>One demo. Your real data. 30 minutes.</p>
-  <div class="cta-btns">
-    <a href="https://wa.me/919900638277?text=I'd%20like%20a%20personalized%20IVF%20Computer%20demo" class="btn btn-primary btn-lg">Book a personalized demo →</a>
-    <a href="#case-study" class="btn btn-outline btn-lg">Read the case study</a>
-  </div>
-</div>
+  <!-- India -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Made for Indian clinics</span>
+        <h2>Built around how your clinic already works.</h2>
+      </div>
+      <div class="india-grid">
+        <div class="card reveal"><div class="emoji">💬</div><h3>WhatsApp first</h3><p>Patients keep messaging the number they already use. Nothing new for them to learn.</p></div>
+        <div class="card reveal"><div class="emoji">📱</div><h3>On any phone</h3><p>Doctors check in between procedures, and patients open it from WhatsApp.</p></div>
+        <div class="card reveal"><div class="emoji">🗣️</div><h3>Your languages</h3><p>English, Hindi, Marathi, Punjabi, Kannada, Telugu and Tamil.</p></div>
+        <div class="card reveal"><div class="emoji">🏥</div><h3>Your own site</h3><p>Your clinic's name and address, and your data kept apart from every other clinic's.</p></div>
+      </div>
+    </div>
+  </section>
 
-<!-- FOOTER -->
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2>Start free. Pay as you grow.</h2>
+        <p>No setup fee and no per-user charges. Every feature is included.</p>
+      </div>
+      <div class="price-steps">
+        <div class="step reveal" style="background:var(--mint);color:var(--mint-ink)"><div class="when">Month 1</div><div class="amt">Free</div><p>Set up, bring your team in, and see it working with your own patients.</p></div>
+        <div class="step reveal" style="background:var(--sky);color:var(--sky-ink)"><div class="when">Months 2 to 4</div><div class="amt">₹10,000<span style="font-size:1rem;font-weight:500"> /month</span></div><p>A fixed fee while it becomes part of your clinic's day.</p></div>
+        <div class="step reveal" style="background:var(--lilac);color:var(--lilac-ink)"><div class="when">After that</div><div class="amt">2%</div><p>Of what patients pay you each month. A quiet month means a smaller bill.</p></div>
+      </div>
+      <div class="price-notes">
+        <span>Every feature included</span><span>Unlimited staff logins</span><span>No long contract</span><span>GST extra</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap">
+      <div class="cta-box reveal">
+        <h2>See it with your own clinic in mind.</h2>
+        <p>A 30-minute video call. We show the real app, with made-up patients.</p>
+        <div class="hero-ctas" style="justify-content:center">
+          <a class="btn btn-white" href="https://wa.me/919900638277?text=I'd%20like%20a%20demo%20of%20IVFComputer">Book on WhatsApp →</a>
+          <a class="btn btn-line" href="mailto:nikhil@ivfcomputer.com">Email us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="/" class="logo-link"><img src="assets/logo-dark.png" alt="IVF Computer" /></a>
-      <p>The AI operating system for fertility clinics. Backed by Searce. Thirteen modules, zero setup fees, 2% of clinic revenue — aligned incentives.</p>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="/" class="logo" style="margin-bottom:12px"><span class="logo-mark">IC</span>IVFComputer</a>
+        <p style="max-width:320px">Software for fertility clinics in India, from the first enquiry to the pregnancy test and beyond.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a href="#features">What it does</a>
+        <a href="#patients">For patients</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <div>
+        <h4>Talk to us</h4>
+        <a href="https://wa.me/919900638277">WhatsApp +91 99006 38277</a>
+        <a href="mailto:nikhil@ivfcomputer.com">nikhil@ivfcomputer.com</a>
+        <a href="/about">Meet the founders</a>
+      </div>
     </div>
-    <div class="footer-col">
-      <h5>Platform</h5>
-      <a href="#modules">Modules</a>
-      <a href="/case-study">Case study</a>
-      <a href="/pricing">Pricing</a>
+    <div class="foot-bottom">
+      <span>© 2026 IVF Computer</span>
+      <span>Pictures show the real app with made-up patients.</span>
     </div>
-    <div class="footer-col">
-      <h5>For your team</h5>
-      <a href="#people">Clinic owner</a>
-      <a href="#people">Doctor</a>
-      <a href="#people">Coordinator</a>
-      <a href="#people">Patient</a>
-    </div>
-    <div class="footer-col">
-      <h5>Talk to us</h5>
-      <a href="https://wa.me/919900638277">WhatsApp +91 99006 38277</a>
-      <a href="mailto:nikhil@ivfcomputer.com">nikhil@ivfcomputer.com</a>
-      <a href="/about">Meet the founders</a>
-      <a href="/login">Sign in</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 IVF Computer. An operating system, not a tool.</span>
-    <span>Backed by Searce</span>
   </div>
 </footer>
 
-<a href="https://wa.me/919900638277" class="wa-btn" title="Chat on WhatsApp">💬</a>
+<a class="wa-fab" href="https://wa.me/919900638277?text=Hi%2C%20I'd%20like%20to%20know%20more%20about%20IVFComputer" aria-label="Message us on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3M12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8M20.5 3.5A11.8 11.8 0 0 0 1.9 17.7L.2 24l6.4-1.7A11.8 11.8 0 0 0 24 12a11.7 11.7 0 0 0-3.5-8.5"/></svg>
+</a>
 
+<script>
+  // A soft line under the header once the page scrolls, and sections that
+  // ease in as they arrive. Both are decoration; the page reads fine without.
+  const header = document.querySelector('header');
+  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 8), { passive: true });
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+</script>
 </body>
 </html>
