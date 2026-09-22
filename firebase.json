@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "ivfcomputer-web",
+    "public": ".",
+    "ignore": ["firebase.json", "**/.*", "**/*.md"],
+    "cleanUrls": true,
+    "redirects": [
+      { "source": "/pricing", "destination": "/", "type": 301 },
+      { "source": "/case-study", "destination": "/#janini", "type": 301 },
+      { "source": "/sign-in", "destination": "/login", "type": 301 }
+    ],
+    "headers": [
+      { "source": "/assets/**", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] },
+      { "source": "**/*.html", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }
+    ]
+  }
+}
