@@ -173,16 +173,6 @@
     .india-grid .card p { font-size: .9rem; color: var(--muted); }
     .india-grid .emoji { font-size: 1.75rem; }
 
-    /* Pricing */
-    .pricing { background: white; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .price-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .step { border-radius: 24px; padding: 32px 28px; position: relative; }
-    .step .when { font-size: .8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; opacity: .8; }
-    .step .amt { font-family: var(--head); font-size: 2.75rem; font-weight: 600; line-height: 1.1; margin: 10px 0 6px; }
-    .step p { font-size: .9375rem; opacity: .85; }
-    .price-notes { display: flex; gap: 12px 28px; flex-wrap: wrap; justify-content: center; margin-top: 32px; font-size: .9375rem; color: var(--muted); }
-    .price-notes span::before { content: '✓ '; color: var(--teal); font-weight: 800; }
-
     /* CTA */
     .cta { text-align: center; }
     .cta-box { background: linear-gradient(135deg, #0f766e 0%, #0d9488 55%, #14b8a6 100%); color: white; border-radius: 32px; padding: 72px 32px; position: relative; overflow: hidden; }
@@ -220,7 +210,7 @@
       .hero { padding: 32px 0 56px; }
       .hero .lede { font-size: 1.0625rem; }
       .hero-ctas .btn { flex: 1 1 100%; }
-      .problem-grid, .feat-grid, .india-grid, .price-steps, .foot { grid-template-columns: 1fr; }
+      .problem-grid, .feat-grid, .india-grid, .foot { grid-template-columns: 1fr; }
       .strip-grid { grid-template-columns: 1fr; gap: 14px; }
       .float-a { left: -6px; top: 36%; }
       .float-b { display: none; }
@@ -229,7 +219,7 @@
       .janini-l, .janini-r { padding: 28px 20px; }
       .nav-right .signin { display: none; }
       .cta-box { padding: 56px 20px; border-radius: 24px; }
-      .card, .feat, .step { padding: 24px 20px; }
+      .card, .feat { padding: 24px 20px; }
     }
   </style>
 </head>
@@ -242,7 +232,6 @@
       <a href="#features">What it does</a>
       <a href="#patients">For patients</a>
       <a href="#janini">Janini IVF</a>
-      <a href="#pricing">Pricing</a>
       <a href="/about">About us</a>
     </nav>
     <div class="nav-right">
@@ -410,25 +399,6 @@
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="pricing" id="pricing">
-    <div class="wrap">
-      <div class="section-head center reveal">
-        <span class="eyebrow">Pricing</span>
-        <h2>Start free. Pay as you grow.</h2>
-        <p>No setup fee and no per-user charges. Every feature is included.</p>
-      </div>
-      <div class="price-steps">
-        <div class="step reveal" style="background:var(--mint);color:var(--mint-ink)"><div class="when">Month 1</div><div class="amt">Free</div><p>Set up, bring your team in, and see it working with your own patients.</p></div>
-        <div class="step reveal" style="background:var(--sky);color:var(--sky-ink)"><div class="when">Months 2 to 4</div><div class="amt">₹10,000<span style="font-size:1rem;font-weight:500"> /month</span></div><p>A fixed fee while it becomes part of your clinic's day.</p></div>
-        <div class="step reveal" style="background:var(--lilac);color:var(--lilac-ink)"><div class="when">After that</div><div class="amt">2%</div><p>Of what patients pay you each month. A quiet month means a smaller bill.</p></div>
-      </div>
-      <div class="price-notes">
-        <span>Every feature included</span><span>Unlimited staff logins</span><span>No long contract</span><span>GST extra</span>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="cta">
     <div class="wrap">
@@ -455,8 +425,7 @@
         <h4>Product</h4>
         <a href="#features">What it does</a>
         <a href="#patients">For patients</a>
-        <a href="#pricing">Pricing</a>
-      </div>
+        </div>
       <div>
         <h4>Talk to us</h4>
         <a href="https://wa.me/919900638277">WhatsApp +91 99006 38277</a>
